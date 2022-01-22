@@ -2,36 +2,6 @@
 
 ## Getting Started
 
-
-### Docker-Compose Instructions for running apps in Development
-
-For using docker-compose, please see the `docker-compose.yml` at the root of the repository. This file allows compose to standup multiple docker services containing the projects throughout webapp. To start, use the following docker-compose command.
-
-    docker-compose up
-    
-
-Feel free to add projects/services as they're created, and add volume mounts to allow for hot-loading and easier development. For example, to hot load any changes that take place in the `webapp` project, the following local directory is mounted to it's corresponding docker directory with the following addition.
-
-    
-    volumes:
-      - ./packages/webapp/src/pages:/app/packages/webapp/src/pages
-
-### Docker Instructions for running apps in Production
-
-Docker files for individual apps are located inside the docker folder. You'll want to add a new docker file for each new app you create.
-
-You can build a production image for webapp with the command
-
-    docker build -f docker/Dockerfile.webapp-prod -t webapp .
-
-You can then run the server
-
-    docker run -i -t --rm -p 8080:80 webapp
-
-Note that running a production version of your webapp means you won't benefit from webpack's hot module reloading, because there is no webpack dev server. That means you won't see changes instantly reflected in your browser when you save the file in VS code. 
-
-## Node.js Instructions
-
 ### Development
 
 install lerna
@@ -94,7 +64,22 @@ npm run test
 ```
 
 for more build commands, check the package.json at the root, `webapp`.
-    
+
+
+
+## Docker Instructions for running apps in Production
+
+Docker files for individual apps are located inside the docker folder. 
+
+You can build a production image for webapp with the command
+
+    docker build -f docker/Dockerfile.webapp-prod -t webapp .
+
+You can then run the server
+
+    docker run -i -t --rm -p 8080:80 webapp
+
+Note that running a production version of your webapp means you won't benefit from webpack's hot module reloading, because there is no webpack dev server. That means you won't see changes instantly reflected in your browser when you save the file in VS code. 
 
 ## Frameworks that are included with this repo
 * [next.js](https://nextjs.org/docs/getting-started) is a React framework that makes routing easy and comes with a lot of awesome optimizations.
@@ -111,3 +96,8 @@ It is highly recommended that you install the Prettier and Eslint extensions to 
 Why [lerna](https://github.com/lerna/lerna) ?
 
 Lerna is a popular tool for UI monorepos. As UI repos and dependencies grow, module bundle sizes increase and can cause issues when webpack is building or recompiling. Large repos can also increase build time for CI/CD pipelines. Lerna takes care of this by making it easy to build, share, version and deploy individual packages. If you need to go down range and create a UI for a customer, you will be able to pull in any components from this repo since they will be hosted on an internal NPM repo (eg. Nexus).
+
+
+## TODO
+
+add msw
