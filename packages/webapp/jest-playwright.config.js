@@ -1,8 +1,8 @@
 module.exports = {
 	browsers: ['chromium'],
 	serverOptions: {
-		command: 'next start -p 3000',
-		port: 3000,
+		command: 'next start -p 3001',
+		port: 3001,
 		launchTimeout: 10000,
 		debug: true
 	},
