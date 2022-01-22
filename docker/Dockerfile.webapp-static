@@ -1,0 +1,21 @@
+FROM node:15-alpine3.13 as builder
+
+WORKDIR /app
+
+EXPOSE 3000
+
+RUN npm install -g lerna
+
+COPY . .
+
+RUN npm run bootstrap
+
+RUN npm run build:components
+RUN npm run build:visualizations
+RUN npm run build:webapp
+
+RUN npm run static:webapp 
+
+# Serve
+FROM nginx:1.18-alpine
+COPY --from=builder /app/packages/webapp/out /usr/share/nginx/html

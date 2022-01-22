@@ -1,0 +1,78 @@
+{
+	"name": "webapp",
+	"version": "1.0.0",
+	"private": true,
+	"main": "index.js",
+	"scripts": {
+		"bootstrap": "npm install; npx lerna bootstrap -- --legacy-peer-deps;",
+		"dev:webapp": "lerna run --scope @myscope/webapp --stream dev",
+		"build:webapp": "lerna run --scope @myscope/webapp --stream build",
+		"prod:webapp": "lerna run --scope @myscope/webapp --stream prod",
+		"static:webapp": "lerna run --scope @myscope/webapp --stream static",
+		"test:webapp": "lerna run --scope @myscope/webapp --stream test",
+		"build:components": "lerna run --scope @myscope/components --stream build",
+		"build:visualizations": "lerna run --scope @myscope/visualizations --stream build",
+		"clean": "npx lerna run clean:build && npx lerna run clean && npx rimraf node_modules",
+		"clean:build": "lerna run clean:build",
+		"test": "lerna run test --stream",
+		"dev": "run-p --print-label dev:*",
+		"build": "lerna run build --stream",
+		"start": "lerna run start",
+		"lint": "./node_modules/.bin/eslint *.js **/*.ts **/*.tsx",
+		"prettier": "npx prettier --write **/*.ts **/*.tsx",
+		"prepush": "lint",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx,json}": [
+			"prettier --write"
+		],
+		"**/*.{js,jsx,ts,tsx}": [
+			"eslint --fix --max-warnings=0"
+		]
+	},
+	"devDependencies": {
+		"@testing-library/dom": "^7.30.4",
+		"@testing-library/jest-dom": "^5.12.0",
+		"@testing-library/react": "^11.2.6",
+		"@testing-library/user-event": "^13.1.5",
+		"@types/jest": "^26.0.22",
+		"@types/next": "^9.0.0",
+		"@types/node": "^14.14.26",
+		"@types/react": "^17.0.1",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.27.0",
+		"@zeit/next-typescript": "^1.1.1",
+		"babel-jest": "^26.6.3",
+		"babel-plugin-import": "^1.13.3",
+		"babel-plugin-styled-components": "^1.12.0",
+		"eslint": "^7.26.0",
+		"eslint-config-airbnb": "^18.2.1",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-react": "^7.23.2",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"husky": "^6.0.0",
+		"jest": "^26.6.3",
+		"jest-playwright-preset": "^1.6.1",
+		"jest-transform-stub": "^2.0.0",
+		"lerna": "^3.22.1",
+		"lint-staged": "^11.0.0",
+		"playwright": "^1.12.2",
+		"prettier": "2.2.1",
+		"typescript": "^4.1.5",
+		"whatwg-fetch": "^3.6.2"
+	},
+	"dependencies": {
+		"antd": "^4.12.3",
+		"axios": "^0.21.1",
+		"next": "^9.4.4",
+		"next-seo": "^4.19.0",
+		"next-transpile-modules": "^6.3.0",
+		"npm-run-all": "^4.1.5",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"rimraf": "^3.0.2",
+		"styled-components": "^5.2.1"
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "name": "@myscope/components",
+    "version": "1.0.0",
+    "description": "shared components",
+    "module": "src/index.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+        "build": "tsc -p ./tsconfig.build.json",
+        "clean:build": "npx rimraf dist",
+        "clean": "npx rimraf node_modules",
+        "prepublish": "npm run build"
+    },
+    "devDependencies": {
+        "typescript": "^4.1.5",
+        "rimraf": "^3.0.2"
+    },
+    "peerDependencies": {
+        "@types/react": ">= 16.8.0",
+        "react": ">= 16.8.0",
+        "react-dom": ">= 16.8.0",
+        "styled-components": ">= 5.2.1"
+    },
+    "publishConfig": {
+        "@myscope:registry": "https://some.internal.npm/"
+    }
+}

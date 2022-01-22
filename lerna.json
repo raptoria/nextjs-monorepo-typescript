@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.0.0",
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    },
+    "publish": {
+      "registry": "https://some.registry.where.adding.scope.infront.breaks.lerna"
+    }
+  }
+}

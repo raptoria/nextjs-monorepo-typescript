@@ -1,0 +1,15 @@
+FROM node:15-alpine3.13
+
+WORKDIR /app
+
+EXPOSE 3000
+
+RUN npm install -g lerna
+
+COPY . .
+
+RUN npm run bootstrap
+
+ENTRYPOINT ["/usr/local/bin/npm", "run"]
+
+CMD ["dev:webapp"]
