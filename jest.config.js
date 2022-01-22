@@ -31,7 +31,6 @@ module.exports = {
             testEnvironment: 'jsdom',
             globalSetup: '<rootDir>/setupEnv.ts',
             setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
-            modulePathIgnorePatterns: ['.next'],
             testMatch: ['<rootDir>/src/**/__tests__/**/*.[jt]s?(x)']
         }
     ]

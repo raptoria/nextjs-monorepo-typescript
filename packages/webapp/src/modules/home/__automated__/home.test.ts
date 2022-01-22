@@ -1,9 +1,8 @@
-import 'expect-playwright';
-
 describe('Webapp UI', () => {
 	beforeAll(async () => {
-		await page.goto('http://localhost:3000', { timeout: 60000 });
-		page.setDefaultTimeout(10000);
+		await page.goto('http://localhost:3001', {
+			waitUntil: 'networkidle'
+		});
 	});
 
 	it('should be titled "Webapp"', async () => {

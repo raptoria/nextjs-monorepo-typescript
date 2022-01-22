@@ -29,7 +29,7 @@ npm run dev
 ```
 
 ### Production
-There are 2 ways to prepare your app to run in production. The first is using the `start` command after a `build` which runs a Node process to serve up a production version of your app. If your app relies on SSR or serverless functions, you would want to use this approach. This is what `Dockerfile.webapp-start` is doing.
+There are 2 ways to prepare your app to run in production. The first is using the `prod` command after a `build` which runs a Node process to serve up a production version of your app. If your app relies on SSR or serverless functions, you would want to use this approach. This is what `Dockerfile.webapp-prod` is doing.
 
 ### Method 1
 
