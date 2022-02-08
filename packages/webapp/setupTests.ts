@@ -1,6 +1,5 @@
-import 'whatwg-fetch';
-// import { server } from './mocks/server';
-
-// beforeAll(() => server.listen());
-// afterEach(() => server.resetHandlers());
-// afterAll(() => server.close());
+import { server } from './mocks/server';
+console.log('here!');
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());

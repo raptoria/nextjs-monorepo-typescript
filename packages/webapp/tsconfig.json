@@ -1,15 +1,18 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "compilerOptions": {
-    "incremental": true
-  }
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"src": ["src"]
+		},
+		"incremental": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"custom.d.ts"
+	],
+	"exclude": ["**/node_modules/**", "node_modules"]
 }

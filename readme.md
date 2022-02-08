@@ -86,6 +86,7 @@ Note that running a production version of your webapp means you won't benefit fr
 * [antd](https://ant.design/components/overview/) is included as the UI component library of choice.
 * [styled-components](https://styled-components.com/docs) is used for all CSS. Please use this instead of making your own stylesheets. We are going for strictly CSS-in-JS :)
 * [react flow](https://reactflow.dev/) for the DAG component
+* [msw](https://reactflow.dev/) a mock server worker for writing mock APIs against functional tests
 
 
 ## VS code extensions
