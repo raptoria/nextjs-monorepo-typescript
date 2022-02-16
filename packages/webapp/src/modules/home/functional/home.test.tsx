@@ -1,7 +1,6 @@
 import { waitFor } from '@testing-library/dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
 import Index from '../../../pages';
 
 jest.mock('next/router', () => ({
@@ -36,5 +35,8 @@ describe('App', () => {
 		await waitFor(() => {
 			expect(screen.getByText('Some content here')).toBeInTheDocument();
 		});
+	});
+	it('Test variable works', async () => {
+		expect(process.env.NEXT_PUBLIC_TEST_VAR).toBe('testing 1 2 3');
 	});
 });

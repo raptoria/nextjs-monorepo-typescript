@@ -12,7 +12,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"**/*.js",
-		"custom.d.ts"
+		"custom.d.ts",
+		"playwright.config.ts"
 	],
 	"exclude": ["**/node_modules/**", "node_modules"]
 }

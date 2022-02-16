@@ -1,5 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
-import fetch from 'node-fetch';
+export {}; //isolatedModules workaround
 
 describe('Mock Service Worker test', () => {
 	it('can fetch the MSW test API', async () => {

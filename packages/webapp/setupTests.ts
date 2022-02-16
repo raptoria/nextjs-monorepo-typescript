@@ -1,5 +1,7 @@
 import { server } from './mocks/server';
-console.log('here!');
+import 'whatwg-fetch';
+import '@testing-library/jest-dom/extend-expect';
+
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
