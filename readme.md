@@ -64,6 +64,15 @@ npm run build
 npm run test
 ```
 
+The build command also triggers a build for the shared components `packages/components` that outputs the typescript files into commonjs format, located at `<rootDir>/dist` so Jest can parse it. The TEST_BUILD_FOLDER=dist appended to the test script tells Jest to use the `dist`, or built files for running tests.
+
+Note that all tests commands assume you have already run the build commands. They will not run properly without it.
+
+React Testing Library takes a user centered approach to writing UI tests. Tests are less brittle when they are written from the perspective of what a user would do on a given page, rather than focusing on implementation details. _The more your tests resemble the way your software is used, the more confidence they can give you._
+
+It is possible to debug tests using Chrome or VS code. You can learn about that [here](https://jestjs.io/docs/troubleshooting).
+
+
 for more build commands, check the package.json at the root, `webapp`.
 
 ## Docker Instructions for running apps in Production
