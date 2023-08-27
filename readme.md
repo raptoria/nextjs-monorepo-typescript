@@ -1,4 +1,4 @@
-# A Next.js monorepo that uses Typescript
+# A Next.js boilerplate monorepo that uses Typescript
 
 ## Getting Started
 
